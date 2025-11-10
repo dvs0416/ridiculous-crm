@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CRM App - Sales Opportunities</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#cf6317",
+              "background-light": "#f8f7f6",
+              "background-dark": "#211811",
+              "base": "#C87533",
+              "text-primary": "#333333",
+              "text-secondary": "#757575",
+              "surface-light": "#F5F5F5",
+              "surface-dark": "#2a2118",
+              "border-light": "#E0E0E0",
+              "border-dark": "#3a3026",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        font-size: 20px;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary dark:text-background-light">
+<div class="flex flex-col h-screen">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-6 py-3 bg-background-light dark:bg-background-dark z-10 shrink-0">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z"></path>
+<path clip-rule="evenodd" d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-text-primary dark:text-background-light text-lg font-bold leading-tight tracking-[-0.015em]">CRM App</h2>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-text-primary dark:text-background-light text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Opportunities</a>
+<a class="text-text-primary dark:text-background-light text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Customers</a>
+<a class="text-text-primary dark:text-background-light text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Reports</a>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-base text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 hover:bg-opacity-90">
+<span class="material-symbols-outlined">add</span>
+<span class="truncate">Add New Opportunity</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdbR6OumDQTBIJ_oTEaZ9muobCSwoEdMIN3D-PuKBKtOvVYu5rX5rlGQT0PX8fAj1wNioZRO2aeu9vsu_pt4h8b7xrxGKejfoj8Vw-2e7AnAQkFG0jR-RyzeGSzZrUEGvJNWLZ2g5GYBDm83HnMVTYP5FGzwGIuY0eZxzGLioUakbftfdomgedIpOvLZ7Bl4_pYTO3zHb4tFqZQG5s3DyDanndg0OyJknTRpZPDTWsrMYZsKpGqZ3Hlegst3PY_5xKCGbDS7sqNimf");'></div>
+</div>
+</header>
+<div class="flex-1 flex overflow-hidden">
+<!-- SideNavBar / Filter Sidebar -->
+<aside class="w-72 border-r border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-6 flex flex-col shrink-0">
+<!-- SearchBar -->
+<div class="pb-4">
+<label class="flex flex-col min-w-40 h-11 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-secondary dark:text-gray-400 flex border-none bg-background-light dark:bg-background-dark items-center justify-center pl-3.5 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined !text-[22px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-background-light focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-background-dark focus:border-none h-full placeholder:text-text-secondary dark:placeholder:text-gray-400 px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search by name, company..." value=""/>
+</div>
+</label>
+</div>
+<!-- Accordions for Filters -->
+<div class="flex flex-col flex-1 overflow-y-auto pr-2">
+<details class="flex flex-col border-t border-border-light dark:border-border-dark py-2 group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none hover:text-primary dark:hover:text-primary">
+<p class="text-sm font-medium leading-normal">Status</p>
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pl-1">
+<label class="flex gap-x-3 py-2 flex-row cursor-pointer">
+<input checked="" class="h-5 w-5 rounded border-gray-300 dark:border-gray-500 bg-transparent text-base checked:bg-base checked:border-base focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<p class="text-text-primary dark:text-background-light text-sm font-normal leading-normal">Prospecting</p>
+</label>
+<label class="flex gap-x-3 py-2 flex-row cursor-pointer">
+<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-500 bg-transparent text-base checked:bg-base checked:border-base focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<p class="text-text-primary dark:text-background-light text-sm font-normal leading-normal">Negotiation</p>
+</label>
+<label class="flex gap-x-3 py-2 flex-row cursor-pointer">
+<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-500 bg-transparent text-base checked:bg-base checked:border-base focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<p class="text-text-primary dark:text-background-light text-sm font-normal leading-normal">Closed Won</p>
+</label>
+<label class="flex gap-x-3 py-2 flex-row cursor-pointer">
+<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-500 bg-transparent text-base checked:bg-base checked:border-base focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<p class="text-text-primary dark:text-background-light text-sm font-normal leading-normal">Closed Lost</p>
+</label>
+</div>
+</details>
+<details class="flex flex-col border-t border-border-light dark:border-border-dark py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none hover:text-primary dark:hover:text-primary">
+<p class="text-sm font-medium leading-normal">Deal Value</p>
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="py-2 text-text-secondary dark:text-gray-400 text-sm">
+                            Range slider control here.
+                        </div>
+</details>
+<details class="flex flex-col border-t border-border-light dark:border-border-dark py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none hover:text-primary dark:hover:text-primary">
+<p class="text-sm font-medium leading-normal">Assigned To</p>
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pl-1">
+<label class="flex gap-x-3 py-2 flex-row cursor-pointer">
+<input checked="" class="h-5 w-5 rounded border-gray-300 dark:border-gray-500 bg-transparent text-base checked:bg-base checked:border-base focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<p class="text-text-primary dark:text-background-light text-sm font-normal leading-normal">Jane Doe</p>
+</label>
+<label class="flex gap-x-3 py-2 flex-row cursor-pointer">
+<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-500 bg-transparent text-base checked:bg-base checked:border-base focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<p class="text-text-primary dark:text-background-light text-sm font-normal leading-normal">John Smith</p>
+</label>
+</div>
+</details>
+</div>
+<button class="w-full text-center text-primary dark:text-primary text-sm font-medium py-2 mt-auto hover:underline">
+                    Clear All Filters
+                </button>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<div class="px-10 py-6">
+<h1 class="text-2xl font-bold text-text-primary dark:text-background-light">Sales Opportunities</h1>
+<p class="text-text-secondary dark:text-gray-400 mt-1">Showing 25 of 150 opportunities</p>
+</div>
+<div class="flex-1 overflow-x-auto">
+<div class="inline-block min-w-full align-middle px-10">
+<table class="min-w-full divide-y divide-border-light dark:divide-border-dark">
+<thead>
+<tr>
+<th class="py-3.5 pr-3 text-left text-sm font-semibold text-text-primary dark:text-background-light" scope="col">Opportunity Name</th>
+<th class="px-3 py-3.5 text-left text-sm font-semibold text-text-primary dark:text-background-light" scope="col">Stage</th>
+<th class="px-3 py-3.5 text-left text-sm font-semibold text-text-primary dark:text-background-light" scope="col">Value</th>
+<th class="px-3 py-3.5 text-left text-sm font-semibold text-text-primary dark:text-background-light" scope="col">Close Date</th>
+<th class="px-3 py-3.5 text-left text-sm font-semibold text-text-primary dark:text-background-light" scope="col">Owner</th>
+<th class="relative py-3.5 pl-3 pr-4 sm:pr-0" scope="col">
+<span class="sr-only">Edit</span>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-border-dark">
+<!-- Table Row -->
+<tr class="hover:bg-surface-light dark:hover:bg-surface-dark cursor-pointer group">
+<td class="whitespace-nowrap py-4 pr-3 text-sm">
+<div class="font-medium text-text-primary dark:text-background-light">Quantum Solutions Integration</div>
+<div class="text-text-secondary dark:text-gray-400">Innovate Corp</div>
+</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm">
+<span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300">Prospecting</span>
+</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">$120,000</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">Dec 15, 2024</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">Jane Doe</td>
+<td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium">
+<button class="text-text-secondary dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- More rows... -->
+<tr class="hover:bg-surface-light dark:hover:bg-surface-dark cursor-pointer group">
+<td class="whitespace-nowrap py-4 pr-3 text-sm">
+<div class="font-medium text-text-primary dark:text-background-light">NextGen AI Platform</div>
+<div class="text-text-secondary dark:text-gray-400">FutureTech Inc.</div>
+</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm">
+<span class="inline-flex items-center rounded-full bg-orange-100 dark:bg-orange-900 px-2 py-1 text-xs font-medium text-orange-700 dark:text-orange-300">Negotiation</span>
+</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">$250,000</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">Nov 30, 2024</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">John Smith</td>
+<td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium">
+<button class="text-text-secondary dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-light dark:hover:bg-surface-dark cursor-pointer group">
+<td class="whitespace-nowrap py-4 pr-3 text-sm">
+<div class="font-medium text-text-primary dark:text-background-light">Cloud Migration Project</div>
+<div class="text-text-secondary dark:text-gray-400">DataFlow Systems</div>
+</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm">
+<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300">Closed Won</span>
+</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">$75,000</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">Oct 01, 2024</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">Jane Doe</td>
+<td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium">
+<button class="text-text-secondary dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-light dark:hover:bg-surface-dark cursor-pointer group">
+<td class="whitespace-nowrap py-4 pr-3 text-sm">
+<div class="font-medium text-text-primary dark:text-background-light">Enterprise Security Overhaul</div>
+<div class="text-text-secondary dark:text-gray-400">SecureNet Partners</div>
+</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm">
+<span class="inline-flex items-center rounded-full bg-red-100 dark:bg-red-900 px-2 py-1 text-xs font-medium text-red-700 dark:text-red-300">Closed Lost</span>
+</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">$95,000</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">Sep 20, 2024</td>
+<td class="whitespace-nowrap px-3 py-4 text-sm text-text-secondary dark:text-gray-300">John Smith</td>
+<td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium">
+<button class="text-text-secondary dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Pagination -->
+<nav class="flex items-center justify-between border-t border-border-light dark:border-border-dark px-10 py-3 mt-auto">
+<div class="flex flex-1 justify-between sm:justify-end">
+<a class="relative inline-flex items-center rounded-md bg-background-light dark:bg-surface-dark px-3 py-2 text-sm font-medium text-text-secondary dark:text-gray-300 ring-1 ring-inset ring-border-light dark:ring-border-dark hover:bg-surface-light dark:hover:bg-background-dark" href="#">Previous</a>
+<a class="relative ml-3 inline-flex items-center rounded-md bg-background-light dark:bg-surface-dark px-3 py-2 text-sm font-medium text-text-secondary dark:text-gray-300 ring-1 ring-inset ring-border-light dark:ring-border-dark hover:bg-surface-light dark:hover:bg-background-dark" href="#">Next</a>
+</div>
+</nav>
+</main>
+</div>
+</div>
+</body></html>

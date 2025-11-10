@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Profile - Bronze CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#cf6317",
+            "background-light": "#fcfaf8", // Replaced with a slightly warmer off-white from provided components
+            "background-dark": "#211811",
+            "brand-primary": "#C87533",
+            "brand-secondary": "#7D746D",
+            "brand-background": "#F9F6F2",
+            "brand-text": "#363432",
+            "brand-success": "#4A9396",
+            "brand-warning": "#D4A251",
+            "brand-border": "#E7D9D0", // From component's border color
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+<body class="font-display bg-brand-background text-brand-text">
+<div class="flex min-h-screen">
+<aside class="flex-shrink-0 w-64 bg-background-light border-r border-brand-border">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex gap-3 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Bronze CRM logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7MSoTiTkM232gzSGGUiUKQLEPq-RJeeM6K0xUHyOeAyAkfUbbJglNVj4LLRlIa_f8h7OfICrZXOxrj2rMLKXrTQzn4X8zOF9_FZAVixDG0aTT8su8F4GVQlR03dRN1rJz1Ii7U2OSDiBVzoOm7ePLFWXq_JyL6XsAixqAOFxGE7AvM8CrAi9fD_YS2aVM3Sx8ybaKjJ4dKdeUy9ZBuCkmjpCL21jniqKcqKiD-Wka1wW-qDa_PxKZw4CpG79s-v-EloYa_Vv73R15");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#1b130e] text-base font-medium leading-normal">Bronze CRM</h1>
+<p class="text-[#976d4e] text-sm font-normal leading-normal">Sales Team</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5" href="#">
+<span class="material-symbols-outlined text-brand-secondary">dashboard</span>
+<p class="text-[#1b130e] text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-primary/20" href="#">
+<span class="material-symbols-outlined text-brand-primary" style="font-variation-settings: 'FILL' 1;">group</span>
+<p class="text-brand-primary text-sm font-bold leading-normal">Customers</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5" href="#">
+<span class="material-symbols-outlined text-brand-secondary">pie_chart</span>
+<p class="text-[#1b130e] text-sm font-medium leading-normal">Opportunities</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5" href="#">
+<span class="material-symbols-outlined text-brand-secondary">show_chart</span>
+<p class="text-[#1b130e] text-sm font-medium leading-normal">Reports</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-brand-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">New Lead</span>
+</button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5" href="#">
+<span class="material-symbols-outlined text-brand-secondary">settings</span>
+<p class="text-[#1b130e] text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5" href="#">
+<span class="material-symbols-outlined text-brand-secondary">help</span>
+<p class="text-[#1b130e] text-sm font-medium leading-normal">Help</p>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<div class="max-w-7xl mx-auto">
+<header class="flex flex-wrap justify-between items-center gap-4 mb-8">
+<div class="flex min-w-72 flex-col gap-1">
+<h1 class="text-brand-text text-4xl font-black leading-tight tracking-[-0.033em]">Eleanor Vance</h1>
+<p class="text-brand-secondary text-base font-normal leading-normal">Acme Inc.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-black/5 text-brand-text text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Edit Profile</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-brand-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Add Note</span>
+</button>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-1 flex flex-col gap-6">
+<div class="bg-background-light p-6 rounded-xl border border-brand-border">
+<div class="flex flex-col gap-4 items-start">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-24 h-24" data-alt="Profile picture of Eleanor Vance" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-CnxNNyw4noEnv6snAaQJyJcyjZTxKaA-ZawpkkhQsGv6RyGcu2YLaqMFZMlUHZxFZd-HComC5MoT_9lpOiuBWgW9XNqlXtOTTJYcbIyWhbI9lm3qVeYR5EmpcXdpiGlKwSW7l677HW52m_qhK5IYgL4hTAgCtjrHJsHk_fFzh4d5t-EQRaLjNObIv--gZXE5PQB5vHl0G5ffrXc_47SdZU6cnzHKYcXKyGcJ58W04Nw3jOirwU8QuvrQP4lvx8aLNWNArnosDLq8");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-brand-text text-[22px] font-bold leading-tight tracking-[-0.015em]">Eleanor Vance</p>
+<p class="text-brand-secondary text-base font-normal leading-normal">Lead Designer at Acme Inc.</p>
+<p class="text-brand-secondary text-base font-normal leading-normal mt-2">Lifetime Value: $12,450</p>
+</div>
+</div>
+</div>
+<div class="bg-background-light p-6 rounded-xl border border-brand-border">
+<h3 class="text-brand-text text-lg font-bold leading-tight tracking-[-0.015em] mb-4">Contact Information</h3>
+<div class="grid grid-cols-[auto_1fr] gap-x-4">
+<div class="col-span-2 grid grid-cols-subgrid border-t border-brand-border py-4">
+<p class="text-brand-secondary text-sm font-normal leading-normal">Email</p>
+<a class="text-brand-text text-sm font-medium leading-normal hover:text-brand-primary" href="mailto:eleanor.vance@acme.com">eleanor.vance@acme.com</a>
+</div>
+<div class="col-span-2 grid grid-cols-subgrid border-t border-brand-border py-4">
+<p class="text-brand-secondary text-sm font-normal leading-normal">Phone</p>
+<p class="text-brand-text text-sm font-normal leading-normal">+1 (555) 123-4567</p>
+</div>
+<div class="col-span-2 grid grid-cols-subgrid border-t border-brand-border py-4">
+<p class="text-brand-secondary text-sm font-normal leading-normal">Address</p>
+<p class="text-brand-text text-sm font-normal leading-normal">123 Innovation Drive, Tech City</p>
+</div>
+</div>
+</div>
+<div class="bg-background-light p-6 rounded-xl border border-brand-border">
+<h3 class="text-brand-text text-lg font-bold leading-tight tracking-[-0.015em] mb-4">Tags</h3>
+<div class="flex flex-wrap gap-2">
+<span class="inline-block bg-brand-success/20 text-brand-success text-xs font-semibold px-2.5 py-1 rounded-full">VIP</span>
+<span class="inline-block bg-brand-warning/20 text-brand-warning text-xs font-semibold px-2.5 py-1 rounded-full">New Lead</span>
+<span class="inline-block bg-brand-secondary/20 text-brand-secondary text-xs font-semibold px-2.5 py-1 rounded-full">West Coast</span>
+<span class="inline-block bg-brand-secondary/20 text-brand-secondary text-xs font-semibold px-2.5 py-1 rounded-full">Design</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-2 flex flex-col gap-8">
+<div class="bg-background-light p-6 rounded-xl border border-brand-border">
+<h3 class="text-brand-text text-lg font-bold leading-tight tracking-[-0.015em] mb-4">Product Subscriptions</h3>
+<div class="space-y-4">
+<div class="p-4 rounded-lg border border-brand-border">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-brand-text">Pro Plan</p>
+<p class="text-sm text-brand-secondary">Initial Purchase: Jan 15, 2023</p>
+</div>
+<span class="inline-block bg-brand-success/20 text-brand-success text-xs font-semibold px-2.5 py-1 rounded-full">Active</span>
+</div>
+<div class="mt-3 pt-3 border-t border-brand-border">
+<p class="text-sm text-brand-secondary">Current Renewal: Jan 15, 2024 - Jan 14, 2025</p>
+</div>
+</div>
+<div class="p-4 rounded-lg border border-brand-border">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-brand-text">Analytics Add-on</p>
+<p class="text-sm text-brand-secondary">Initial Purchase: Jun 22, 2023</p>
+</div>
+<span class="inline-block bg-brand-secondary/20 text-brand-secondary text-xs font-semibold px-2.5 py-1 rounded-full">Expired</span>
+</div>
+<div class="mt-3 pt-3 border-t border-brand-border">
+<p class="text-sm text-brand-secondary">Last Renewal: Jun 22, 2023 - Dec 21, 2023</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-background-light p-6 rounded-xl border border-brand-border">
+<h3 class="text-brand-text text-lg font-bold leading-tight tracking-[-0.015em] mb-4">Contracted Revenue</h3>
+<div class="h-64 flex items-end justify-between gap-2 border-l border-b border-brand-border pl-4 pb-2">
+<div class="w-1/4 flex flex-col items-center gap-2">
+<div class="w-full bg-brand-secondary/30 rounded-t h-24"></div>
+<p class="text-xs text-brand-secondary">2023</p>
+</div>
+<div class="w-1/12 flex items-center h-24 mb-[26px]">
+<div class="w-full border-t-2 border-dashed border-brand-secondary"></div>
+</div>
+<div class="w-1/4 flex flex-col items-center gap-2">
+<div class="w-full flex flex-col justify-end">
+<div class="bg-brand-success/30 h-16 rounded-t"></div>
+<div class="bg-brand-secondary/30 h-24"></div>
+</div>
+<p class="text-xs text-brand-secondary">Renewal</p>
+</div>
+<div class="w-1/12 flex items-center h-40 mb-[26px]">
+<div class="w-full border-t-2 border-dashed border-brand-secondary"></div>
+</div>
+<div class="w-1/4 flex flex-col items-center gap-2">
+<div class="w-full flex flex-col justify-end">
+<div class="bg-brand-primary/30 h-24 rounded-t"></div>
+<div class="bg-brand-success/30 h-16"></div>
+<div class="bg-brand-secondary/30 h-24"></div>
+</div>
+<p class="text-xs text-brand-secondary">Upsell</p>
+</div>
+<div class="w-1/12 flex items-center h-64 mb-[26px]">
+<div class="w-full border-t-2 border-dashed border-brand-secondary"></div>
+</div>
+<div class="w-1/4 flex flex-col items-center gap-2">
+<div class="w-full bg-brand-primary/80 rounded-t h-64"></div>
+<p class="text-xs text-brand-secondary">2024</p>
+</div>
+</div>
+<div class="flex justify-around mt-4 text-xs text-brand-secondary">
+<div class="flex items-center gap-2"><div class="size-3 bg-brand-secondary/30 rounded-sm"></div>Base</div>
+<div class="flex items-center gap-2"><div class="size-3 bg-brand-success/30 rounded-sm"></div>Renewal</div>
+<div class="flex items-center gap-2"><div class="size-3 bg-brand-primary/30 rounded-sm"></div>Upsell</div>
+<div class="flex items-center gap-2"><div class="size-3 bg-brand-primary/80 rounded-sm"></div>Total</div>
+</div>
+</div>
+<div>
+<div class="border-b border-brand-border mb-6">
+<nav aria-label="Tabs" class="flex space-x-6">
+<a aria-current="page" class="px-1 pb-3 text-sm font-bold text-brand-primary border-b-2 border-brand-primary" href="#">Activity</a>
+<a class="px-1 pb-3 text-sm font-medium text-brand-secondary hover:text-brand-text" href="#">Opportunities</a>
+<a class="px-1 pb-3 text-sm font-medium text-brand-secondary hover:text-brand-text" href="#">Notes</a>
+<a class="px-1 pb-3 text-sm font-medium text-brand-secondary hover:text-brand-text" href="#">Files</a>
+</nav>
+</div>
+<div class="space-y-8">
+<div class="flex gap-4">
+<div class="flex items-center justify-center size-10 bg-brand-secondary/20 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-brand-secondary">phone</span>
+</div>
+<div class="flex-1">
+<p class="text-sm text-brand-text font-medium">Logged a call with Eleanor</p>
+<p class="text-sm text-brand-secondary mt-1">"Followed up on the recent proposal. She is reviewing it with her team and will get back to us by Friday."</p>
+<p class="text-xs text-brand-secondary/80 mt-2">Yesterday at 3:45 PM by Alex Green</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center justify-center size-10 bg-brand-primary/20 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-brand-primary">mail</span>
+</div>
+<div class="flex-1">
+<p class="text-sm text-brand-text font-medium">Sent email: "Project Proposal Q3"</p>
+<p class="text-sm text-brand-secondary mt-1">Attached the latest version of the project proposal and outlined the next steps.</p>
+<p class="text-xs text-brand-secondary/80 mt-2">3 days ago by Alex Green</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center justify-center size-10 bg-brand-success/20 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-brand-success">event</span>
+</div>
+<div class="flex-1">
+<p class="text-sm text-brand-text font-medium">Meeting: "Discovery Call"</p>
+<p class="text-sm text-brand-secondary mt-1">Initial discovery call to understand their needs and project requirements. Notes have been added to the "Notes" tab.</p>
+<p class="text-xs text-brand-secondary/80 mt-2">Last week by Jane Doe</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

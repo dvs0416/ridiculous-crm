@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ridiculous CRM - Login/Sign Up</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    .form-input:focus {
+      border-color: #cf6317;
+      box-shadow: 0 0 0 1px #cf6317;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#cf6317",
+            "background-light": "#f8f7f6",
+            "background-dark": "#211811",
+            "text-light": "#3D352E",
+            "text-dark": "#f8f7f6",
+            "muted-light": "#976d4e",
+            "muted-dark": "#a19184",
+            "border-light": "#EAE6E1",
+            "border-dark": "#3d352e",
+            "card-light": "#ffffff",
+            "card-dark": "#2a1f16",
+            "subtle-light": "#f3ece7",
+            "subtle-dark": "#31261d"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden p-4 sm:p-6" style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col justify-center w-full max-w-md">
+<div class="layout-content-container flex flex-col items-center gap-6">
+<div class="flex flex-col items-center gap-2">
+<svg class="h-10 w-10 text-primary" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9.41L14.59 15 16 13.59 13.41 11 16 8.41 14.59 7 12 9.59 9.41 7 8 8.41 10.59 11 8 13.59 9.41 15 12 12.41z"></path></svg>
+<h1 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight">Ridiculous CRM</h1>
+</div>
+<div class="w-full rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-6 sm:p-8 shadow-sm">
+<h2 class="text-text-light dark:text-text-dark tracking-light text-[32px] font-bold leading-tight text-center pb-3 pt-4">Welcome Back</h2>
+<div class="flex px-4 py-4">
+<div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-subtle-light dark:bg-subtle-dark p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-card-light has-[:checked]:dark:bg-card-dark has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-text-light has-[:checked]:dark:text-text-dark text-muted-light dark:text-muted-dark text-sm font-medium leading-normal transition-colors">
+<span class="truncate">Login</span>
+<input checked="" class="invisible w-0" name="auth-toggle" type="radio" value="Login"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-card-light has-[:checked]:dark:bg-card-dark has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-text-light has-[:checked]:dark:text-text-dark text-muted-light dark:text-muted-dark text-sm font-medium leading-normal transition-colors">
+<span class="truncate">Sign Up</span>
+<input class="invisible w-0" name="auth-toggle" type="radio" value="Sign Up"/>
+</label>
+</div>
+</div>
+<form class="flex flex-col gap-4">
+<div class="flex flex-col gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal pb-2">Email Address</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-12 placeholder:text-muted-light dark:placeholder:text-muted-dark p-3 text-base font-normal leading-normal transition-colors" placeholder="you@example.com" type="email" value=""/>
+</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal pb-2">Password</p>
+<div class="flex w-full flex-1 items-stretch">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-12 placeholder:text-muted-light dark:placeholder:text-muted-dark p-3 rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal transition-colors" placeholder="Enter your password" type="password" value=""/>
+<button aria-label="Toggle password visibility" class="text-muted-light dark:text-muted-dark flex border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark items-center justify-center px-3 rounded-r-lg border-l-0" type="button">
+<span class="material-symbols-outlined" style="font-size: 20px;">visibility_off</span>
+</button>
+</div>
+</label>
+<div class="flex justify-end pt-1">
+<a class="text-sm font-medium text-primary hover:underline" href="#">Forgot Password?</a>
+</div>
+</div>
+<div class="flex flex-col gap-4 px-4 py-3">
+<button class="flex h-12 w-full items-center justify-center rounded-lg bg-primary text-white text-base font-medium leading-normal transition-colors hover:bg-primary/90">Sign In</button>
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+<span class="mx-4 flex-shrink text-xs text-muted-light dark:text-muted-dark">OR</span>
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+</div>
+<button class="flex h-12 w-full items-center justify-center gap-3 rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark text-text-light dark:text-text-dark text-base font-medium leading-normal transition-colors hover:bg-background-light dark:hover:bg-background-dark">
+<img alt="Google logo" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ8ASMus-WArDzoMdaqksnvZ4rg6CW67gGnwQRH4sVgbUCkTyDPdjNQ3uKGrxMHsrPv7JlsVTnJc7FUR5dXBjA4i5U-KpMUbOPEhmpdMEQYi4n2rTK4RJgms0uCkOGt6pJA2DUNYuvHmXn2aiiUa9nRC2iEyfl9w3FIiJsR7DQY0CdGMvIapCs2jcXSVa2iNTZmEV1Mir5LgX5yPlxo6naQhqUYGpdgeq_PYSkEw4VBR-kKMGJDGzLEJmIU4uP4XTlLCcE__9of9rQ"/>
+<span>Continue with Google</span>
+</button>
+</div>
+</form>
+</div>
+<div class="text-center">
+<p class="text-sm text-muted-light dark:text-muted-dark">By signing up, you agree to our <a class="font-medium text-primary hover:underline" href="#">Terms of Service</a> and <a class="font-medium text-primary hover:underline" href="#">Privacy Policy</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

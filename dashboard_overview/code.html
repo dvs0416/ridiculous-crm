@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CRM Sales Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#cf6317",
+              "background-light": "#f8f7f6",
+              "background-dark": "#211811",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="flex h-screen">
+<aside class="w-64 flex-shrink-0 bg-[#FCFBF8] dark:bg-background-dark p-4 border-r border-[#EAEAEA] dark:border-gray-700 flex flex-col justify-between">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="size-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#4A4A4A] dark:text-gray-200 text-xl font-bold">CRM</h2>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30" href="#">
+<span class="material-symbols-outlined text-primary">dashboard</span>
+<p class="text-primary text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-[#4A4A4A] dark:text-gray-400">group</span>
+<p class="text-[#4A4A4A] dark:text-gray-300 text-sm font-medium">Contacts</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-[#4A4A4A] dark:text-gray-400">handshake</span>
+<p class="text-[#4A4A4A] dark:text-gray-300 text-sm font-medium">Deals</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-[#4A4A4A] dark:text-gray-400">monitoring</span>
+<p class="text-[#4A4A4A] dark:text-gray-300 text-sm font-medium">Reports</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-2 p-4 rounded-xl bg-[#F3ECE7] dark:bg-gray-800">
+<p class="text-[#4A4A4A] dark:text-gray-200 text-sm font-bold">Upgrade Your Plan</p>
+<p class="text-[#4A4A4A] dark:text-gray-300 text-xs">Get access to more features and unlock your sales potential.</p>
+<button class="w-full mt-2 bg-primary text-white text-sm font-bold py-2 rounded-lg">Upgrade Now</button>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-y-auto">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-[#EAEAEA] dark:border-gray-700 px-8 py-3 bg-[#FCFBF8] dark:bg-background-dark sticky top-0 z-10">
+<div class="flex-1">
+<label class="flex flex-col w-full max-w-md">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-10">
+<div class="text-[#976d4e] flex items-center justify-center pl-3">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#4A4A4A] dark:text-gray-200 focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-gray-400 dark:placeholder-gray-500 pl-2 text-sm" placeholder="Search deals, contacts..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-10 text-[#4A4A4A] dark:text-gray-300 gap-2 min-w-0 px-2.5 hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlT6KREC69qYeCk6w9cLTtZq-Y9IN7spGTfy_A7ZI35ymNGhNKseJt2gaIVdVqXe36PKxkxaPWNpg6DXjtRpPuv0WFGjQY-xZICCmB4ML9IiuBv5Ymp9G_oZDIW-ARM-KwWsN_bB1DOQdXOaRnSwJAGisfQpuOJPU6rMWlq5akDo9WYxMCHnwsQ7Rj_c95yU1fIfa2DW7r9cDRFWWYRuBPUgJMc5qkWYcBLIuytj_WC2JDu6u7JxfwQbyj4d6Qtb-JdVEXBwak66Yx");'></div>
+</div>
+</header>
+<div class="flex-1 p-8 grid grid-cols-12 gap-8">
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-8">
+<div>
+<h1 class="text-[#4A4A4A] dark:text-gray-100 text-3xl font-bold leading-tight">Sales Dashboard</h1>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#EAEAEA] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#4A4A4A] dark:text-gray-300 text-sm font-medium">Revenue This Quarter</p>
+<p class="text-[#4A4A4A] dark:text-gray-100 text-3xl font-bold">$84,320</p>
+<p class="text-[#3D998F] text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-base">arrow_upward</span>+2.5%</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#EAEAEA] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#4A4A4A] dark:text-gray-300 text-sm font-medium">New Leads This Month</p>
+<p class="text-[#4A4A4A] dark:text-gray-100 text-3xl font-bold">127</p>
+<p class="text-[#3D998F] text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-base">arrow_upward</span>+5.1%</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#EAEAEA] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#4A4A4A] dark:text-gray-300 text-sm font-medium">Deals Closing Soon</p>
+<p class="text-[#4A4A4A] dark:text-gray-100 text-3xl font-bold">12</p>
+<p class="text-red-500 text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-base">arrow_downward</span>-1.2%</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#EAEAEA] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#4A4A4A] dark:text-gray-300 text-sm font-medium">Conversion Rate</p>
+<p class="text-[#4A4A4A] dark:text-gray-100 text-3xl font-bold">24%</p>
+<p class="text-[#3D998F] text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-base">arrow_upward</span>+0.8%</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 p-6 rounded-xl border border-[#EAEAEA] dark:border-gray-700 bg-white dark:bg-gray-800">
+<div class="flex flex-wrap gap-4 justify-between items-center">
+<h2 class="text-[#4A4A4A] dark:text-gray-100 text-xl font-bold">Sales Funnel</h2>
+<div class="flex flex-wrap gap-2">
+<button class="flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border border-[#EAEAEA] dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-base">person</span>
+<span>All People</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border border-[#EAEAEA] dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-base">category</span>
+<span>All Products</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border border-[#EAEAEA] dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+<span>Q4 2024</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border border-[#EAEAEA] dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-base">filter_list</span>
+<span>More Filters</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 w-full max-w-2xl mx-auto">
+<div class="flex items-center justify-between w-[50%]">
+<p class="text-sm font-medium text-[#4A4A4A] dark:text-gray-200">Prospect</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">150 / $1.2M</p>
+</div>
+<div class="bg-primary/20 dark:bg-primary/30 w-[50%]" style="clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); height: 3rem;"></div>
+<div class="flex items-center justify-between w-[70%]">
+<p class="text-sm font-medium text-[#4A4A4A] dark:text-gray-200">Qualifying</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">95 / $980k</p>
+</div>
+<div class="bg-primary/40 dark:bg-primary/50 w-[70%]" style="clip-path: polygon(5% 0, 95% 0, 90% 100%, 10% 100%); height: 3rem;"></div>
+<div class="flex items-center justify-between w-[85%]">
+<p class="text-sm font-medium text-[#4A4A4A] dark:text-gray-200">Proposal</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">62 / $750k</p>
+</div>
+<div class="bg-primary/60 dark:bg-primary/70 w-[85%]" style="clip-path: polygon(10% 0, 90% 0, 85% 100%, 15% 100%); height: 3rem;"></div>
+<div class="flex items-center justify-between w-full">
+<p class="text-sm font-medium text-[#4A4A4A] dark:text-gray-200">Negotiation</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">28 / $420k</p>
+</div>
+<div class="bg-primary/80 dark:bg-primary/90 w-full" style="clip-path: polygon(15% 0, 85% 0, 80% 100%, 20% 100%); height: 3rem;"></div>
+<div class="flex items-center justify-between w-full">
+<p class="text-sm font-medium text-[#4A4A4A] dark:text-gray-200">Closed Won</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">12 / $180k</p>
+</div>
+<div class="bg-primary w-full rounded-b-lg" style="clip-path: polygon(20% 0, 80% 0, 100% 100%, 0% 100%); height: 3rem;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h2 class="text-[#4A4A4A] dark:text-gray-100 text-xl font-bold">Active Opportunities</h2>
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg">
+<span class="material-symbols-outlined text-base">add</span>
+                                Add Opportunity
+                            </button>
+</div>
+<div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-xl border border-[#EAEAEA] dark:border-gray-700">
+<table class="w-full text-left text-sm">
+<thead class="border-b border-[#EAEAEA] dark:border-gray-700 text-[#4A4A4A] dark:text-gray-300">
+<tr>
+<th class="p-4 font-medium">Deal Name</th>
+<th class="p-4 font-medium">Company</th>
+<th class="p-4 font-medium">Stage</th>
+<th class="p-4 font-medium">Value</th>
+<th class="p-4 font-medium">Expected Close Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-[#EAEAEA] dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer">
+<td class="p-4 text-[#4A4A4A] dark:text-gray-200 font-medium">QuantumLeap Solutions</td>
+<td class="p-4 text-gray-500 dark:text-gray-400">Innovate Inc.</td>
+<td class="p-4"><span class="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">Proposal</span></td>
+<td class="p-4 text-[#4A4A4A] dark:text-gray-200">$25,000</td>
+<td class="p-4 text-gray-500 dark:text-gray-400">Oct 15, 2024</td>
+</tr>
+<tr class="border-b border-[#EAEAEA] dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer">
+<td class="p-4 text-[#4A4A4A] dark:text-gray-200 font-medium">Synergy Project</td>
+<td class="p-4 text-gray-500 dark:text-gray-400">Apex Corp</td>
+<td class="p-4"><span class="px-2 py-1 text-xs font-medium rounded-full bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">Negotiation</span></td>
+<td class="p-4 text-[#4A4A4A] dark:text-gray-200">$52,000</td>
+<td class="p-4 text-gray-500 dark:text-gray-400">Sep 30, 2024</td>
+</tr>
+<tr class="border-b border-[#EAEAEA] dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer">
+<td class="p-4 text-[#4A4A4A] dark:text-gray-200 font-medium">NextGen Upgrade</td>
+<td class="p-4 text-gray-500 dark:text-gray-400">Zenith Ltd.</td>
+<td class="p-4"><span class="px-2 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">Qualifying</span></td>
+<td class="p-4 text-[#4A4A4A] dark:text-gray-200">$12,500</td>
+<td class="p-4 text-gray-500 dark:text-gray-400">Nov 5, 2024</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer">
+<td class="p-4 text-[#4A4A4A] dark:text-gray-200 font-medium">DataStream Initiative</td>
+<td class="p-4 text-gray-500 dark:text-gray-400">Pioneer Co.</td>
+<td class="p-4"><span class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Prospect</span></td>
+<td class="p-4 text-[#4A4A4A] dark:text-gray-200">$78,000</td>
+<td class="p-4 text-gray-500 dark:text-gray-400">Dec 1, 2024</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-8">
+<div class="flex flex-col gap-4 p-6 rounded-xl border border-[#EAEAEA] dark:border-gray-700 bg-white dark:bg-gray-800">
+<h3 class="text-[#4A4A4A] dark:text-gray-100 font-bold">Recent Activity</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 cursor-pointer group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Avatar for Elena Petrova" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkmPJ6lhPMhhyj1o3lU-2loIfg2eFWuTilZ-ySTmB7p5XMGo1EYcIUo-izr_SdGbxdLRTNftnbP-ol0gZp4fVys2-oE1S_JT8Nwm7-Y1aC23a3D84wv4v4e71Sn2vVpZ35_oiKwDp-Kgy3EYsD84dgryWRNBT_5F8YLb07OTicb86ubElUdNEY0E_WXy9t3CYXZYDYUfbTnAmxovu-bNZUvlZM6miv5iRq1cn8dxNxkyntfw0rfTmSvhICDUg2FrDfyHzCc9DBl9Rn");'></div>
+<div class="flex-1">
+<p class="text-[#4A4A4A] dark:text-gray-200 text-sm font-medium group-hover:text-primary">Elena Petrova</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs">Viewed profile 5m ago</p>
+</div>
+</div>
+<div class="flex items-center gap-4 cursor-pointer group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Avatar for Marcus Thorne" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3BwmraMH7Y8_M-u5RC6WvY80ZsoA-QYFozciFYBt3ixBpALyjs-tblvrUAStFPsD2RMEUHJX0abxBLxcZlKTfGnp_qvVw_rrithACbTlxK30K2SNhBFbiw5o2XmX0CEr3C39o8TyqJpNh4osZAz9Ei2vjdH2l_XsTZ8l_8BEMmpT1uLRwOkh0Vm7RIhLSrmO7tu89lRBuzEu1VrJwP8LOyWbN13mzUCsEAnuCzy81lEidqrP4ghNs2YLFgDWAbM2vUIyfGDD8BA8-");'></div>
+<div class="flex-1">
+<p class="text-[#4A4A4A] dark:text-gray-200 text-sm font-medium group-hover:text-primary">Marcus Thorne</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs">Deal stage updated to "Negotiation"</p>
+</div>
+</div>
+<div class="flex items-center gap-4 cursor-pointer group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Avatar for Jin Kim" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhCwTjsKtB3fN8jwS5eZ2uHYNsKbqpkY6npOXwOc4W8GrGVP5K_vRq8Soh3mvLew0aZ6EPhmzguPvJ8iqOq3I5zPkiB6Xho8vqeTXw95KDb1BIGUsdpgVc4o-LBtD4JACLA2iAcfa1LWa6I8ulEszmhgrrnuQfErh5brNZBQMdupLo-sFd-dMXezIDyjlZokjPMcrh1KRxnsqIvKyxYizdyg0XLD7aa14N2nV6b8CasupWiYpHtlHZaGlSTdsZkPBzyAZkr_IfNlLH");'></div>
+<div class="flex-1">
+<p class="text-[#4A4A4A] dark:text-gray-200 text-sm font-medium group-hover:text-primary">Jin Kim</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs">New contact added</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
